@@ -3,7 +3,7 @@ const runtimeConfig = useRuntimeConfig();
 
 const id = ref(0);
 const query = ref<string | null>("");
-const inputId = ref(0);
+const inputId = ref(1);
 const inputQuerry = ref("");
 
 const fetchData = async () => {
