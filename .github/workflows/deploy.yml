@@ -22,12 +22,13 @@ jobs:
           node-version: 20
           cache: "npm"
           cache-dependency-path: package-lock.json
-        run: npm ci
 
       - name: Generate static files
         env:
           API_BASE: ${{ vars.API_BASE }}
-        run: npm run generate
+        run: |
+          npm ci
+          npm run generate
 
       - name: Configure aws credentials
         uses: aws-actions/configure-aws-credentials@v4
