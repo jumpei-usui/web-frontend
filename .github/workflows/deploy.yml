@@ -24,6 +24,10 @@ jobs:
       - name: Generate static files
         env:
           API_BASE: ${{ vars.API_BASE }}
+          COGNITO_USER_POOL_ID: ${{ secrets.COGNITO_USER_POOL_ID }}
+          COGNITO_USER_POOL_CLIENT_ID: ${{ secrets.COGNITO_USER_POOL_CLIENT_ID }}
+          COGNITO_DOMAIN: ${{ vars.COGNITO_DOMAIN }}
+          COGNITO_REDIRECT_URL: ${{ vars.COGNITO_REDIRECT_URL }}
         run: |
           npm ci
           npm run generate
