@@ -12,6 +12,8 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: ${{ github.ref_name }}
     steps:
       - name: Git clone the repository
         uses: actions/checkout@v4
